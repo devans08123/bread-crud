@@ -5,6 +5,11 @@ const app = express()
 
 const PORT = process.env.PORT
 
+//middleware 
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
 // routs
 app.use('/breads', breadControllers)
 
