@@ -5,7 +5,6 @@ function Show({ bread }) {
     return (
         <Default>
             <h3>{bread.name}</h3>
-            
             <p>
                 and it 
                 {
