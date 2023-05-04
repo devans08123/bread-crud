@@ -1,4 +1,5 @@
 const express = require('express')
+const methodOverride = require('method-override')
 require('dotenv').config()
 const breadControllers = require('./controllers/bread')
 const app = express()
@@ -7,6 +8,7 @@ const PORT = process.env.PORT
 
 //middleware 
 app.use(express.static('public'))
+app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: true }))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
